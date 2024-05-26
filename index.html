@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+
+
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-----<link rel="stylesheet" href="styles/media.css">--->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lato:wght@100;300&family=Poppins:ital,
+        wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+
+</head>
+
+
+
+<body class="main-content">
+
+    <!-----------home-------->
+
+    <header class="section sec1 header active" id="home">
+        <div class="header-content">
+            <div class="header">
+
+                <h1 class="name">
+                    Asslamulaikum, <br>I'm <span>Mina Quddus</span><br>
+                    A QA tester.
+                </h1>
+                <p>
+                    I'm QA tester.As a Quality Assurance (QA) Tester, I play a pivotal role in guaranteeing that
+                    software meets the highest standards of
+                    performance, functionality, and usability. With a keen eye for detail and a passion for excellence,
+                    I strive to identify
+                    and rectify potential issues before they impact end-users, thereby contributing to the seamless
+                    operation of software
+                    applications.
+                </p>
+                <div class="btn-con">
+
+                    <a href="" class="main-btn">
+                        <span class="btn-text">Download CV</span>
+                        <span class="btn-icon"><i class="fa fa-download" aria-hidden="true"></i></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!---------about------->
+
+    <main>
+        <section class="section sec2 about" id="about">
+            <div class="main-title">
+                <h2>About <span>me</span><span class="big-text">my states</span></h2>
+            </div>
+            <div class="about-container">
+                <div class="about">
+
+                    <h4>Information About Me</h4>
+
+                    <p>
+                        <br> As a QA tester, I am dedicated to ensuring the quality and reliability of software
+                        products.
+                        With a meticulous eye for
+                        detail and a passion for excellence, I strive to identify and rectify potential issues before
+                        they impact end-users. My
+                        responsibilities include collaborating with development teams to develop comprehensive test
+                        plans and strategies,
+                        conducting various types of tests to identify defects, documenting and tracking issues,
+                        assessing user experience, and
+                        continuously refining testing methodologies to enhance efficiency and effectiveness. With my
+                        technical proficiency,
+                        analytical thinking, and strong communication skills, I contribute to the seamless operation of
+                        software applications,
+                        ensuring they meet and exceed customer expectations.
+                    </p>
+
+                    <!---tab links----->
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab(event,'skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab(event,'experience')"> Experience</p>
+                        <p class="tab-links" onclick="opentab(event,'education')"> Education</p>
+                    </div>
+
+                    <!-----first tab links workflow--->
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>My SQL</span><br>Database management</li>
+                            <li><span>Selenium</span><br>Web Automation </li>
+                            <li><span>Java Script</span><br>Programing Language </li>
+                            <li><span>HTML/Css</span><br>Web page and Layout</li>
+                        </ul>
+
+                    </div>
+
+                    <!---2nd tab links workflow-->
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2021-2022</span><br>QA tester at Stockholm IT Academy,Sweden</li>
+                            <li><span>2019-2020</span><br>Junior techer at Oxford International School & College,
+                                Chittagong,Bangladesh </li>
+                            <li><span>Februaruy 2018-March 2018</span><br>Team work, Team LeaderShip at Brac Bank
+                                Chittagong,Bangladesh</li>
+                        </ul>
+                    </div>
+                    <!---3rd tab links workflow-->
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2020</span><br>BA</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!------Portfolio -->
+        <section class="section sec3 portfolio" id="portfolio">
+
+            <div class="main-title">
+                <h2>My <span>PortfoliO</span><span class="big-text">my work</span></h2>
+            </div>
+            <p class="port-text">
+                Here is show some of my work that I've done in various programing Language.
+            </p>
+            <div class="portfolios">
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="img/blog2.jpg" alt="">
+
+                        <div class="hover-items">
+                            <h3>Project Source</h3>
+                            <div class="icons">
+                                <a href="https://github.com/MinaQuddus/todolist-app" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="img/port2.jpg" alt="">
+
+                        <div class="hover-items">
+                            <h3>Project Source</h3>
+                            <div class="icons">
+                                <a href="www.google .com" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src="img/blog1.jpg" alt="">
+
+                        <div class="hover-items">
+                            <h3>Project Source</h3>
+                            <div class="icons">
+                                <a href="https://github.com/MinaQuddus/todolist-app" target="_blank">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+        </section>
+
+        <!------resume----->
+        <section class="section sec4 resume" id="resume"></section>
+
+        <!------contact------->
+        <section class="section sec5 contact" id="contact">
+            <div class="contact-container">
+                <div class="main-title">
+                    <h2>Contact <span>Me</span><span class="big-text">my flag </span></h2>
+                </div>
+                <div class="contact-content-con">
+                    <div class="contact">
+                        <h4> Contact me Here</h4>
+                        <p>Thank you for visiting my website! If you have any questions, inquiries, or collaboration
+                            opportunities, feel free to
+                            reach out to me using the contact form below. I value your feedback and look forward to
+                            connecting with you</p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>Location</span>
+
+                                </div>
+                                <p>
+                                    : Stockholm,Sweden
+                                </p>
+
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fa-solid fa-square-envelope"></i>
+                                    <span>Email</span>
+
+                                </div>
+                                <p>
+                                    <span>: minaquduus05@gmail.com</span>
+                                </p>
+
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fa-solid fa-mobile"></i>
+                                    <span>Mobile Number</span>
+
+                                </div>
+                                <p>
+                                    <span>: 0704053503</span>
+                                </p>
+
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fa-solid fa-earth-europe"></i>
+                                    <span>Language</span>
+
+                                </div>
+                                <p>
+                                    <span>: Bangla,English,<br>Hindi,Swedish</span>
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="contact-icons">
+                            <div class="contact-icon">
+                                <a href="www.linkedin.com/feed/" target="_blank"></a>
+                                <i class="fa-brands fa-linkedin"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div class="controlls">
+
+        <div class="control control-1 active-btn" data-id="home">
+            <i class="fa-solid fa-house-circle-check"></i>
+        </div>
+
+
+        <div class="control control-2 " data-id="about">
+            <i class="fa-solid fa-user-group"></i>
+        </div>
+
+
+        <div class="control control-3 " data-id="portfolio">
+            <i class="fa-solid fa-briefcase"></i>
+        </div>
+
+
+        <div class="control control-4 " data-id="resume">
+            <i class="fa-solid fa-file"></i>
+        </div>
+        <div class="control control-5 " data-id="contact">
+            <i class="fa-solid fa-envelope"></i>
+        </div>
+
+
+    </div>
+
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
