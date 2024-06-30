@@ -1,131 +1,101 @@
-const sections = document.querySelectorAll('.section');
-const sectBtns = document.querySelectorAll('.controlls');
-const sectBtn = document.querySelectorAll('.control');
-const allSections= document.querySelector('.main-content');
-const tablinks = document.getElementsByClassName('.tab-links');
-const tablink = document.getElementsByClassName('.tab-link');
-const tabcontents =document.getElementsByClassName('.tab-contents');
-const tabcontent =document.getElementsByClassName('.tab-content');
+const sections = document.querySelectorAll(".section");
+const sectBtns = document.querySelectorAll(".controlls");
+const sectBtn = document.querySelectorAll(".control");
+const allSections = document.querySelector(".main-content");
+const tablinks = document.getElementsByClassName(".tab-links");
+const tablink = document.getElementsByClassName(".tab-link");
+const tabcontents = document.getElementsByClassName(".tab-contents");
+const tabcontent = document.getElementsByClassName(".tab-content");
 
+const form1 = document.getElementById("form1");
+const nameInputField = document.getElementById("name"); 
+function opentab(event, tabname) {
+  // Prevent default behavior of the event (e.g., following a link)
+  // event.preventDefault();
 
+  // Get all elements with class name 'tab-contents' and hide them
+  var tabcontents = document.getElementsByClassName("tab-contents");
+  for (var i = 0; i < tabcontents.length; i++) {
+    //tabcontents[i].className = tabcontent[i].className.replace(" active", "");
 
-function PageTransitions() {
+    // tablinks[i].classList.remove('active-tab');
+    //tabcontent[i].classList.remove('active-tab');
+    tabcontents[i].style.display = "none";
+  }
 
-    for (let i = 0; i < sectBtn.length; i++) {
-        sectBtn[i].addEventListener('click', function () {
-            let currentBtn = document.querySelectorAll('.active-btn');
-            currentBtn[0].className = currentBtn[0].className.replace('active-btn', '');
-            this.className += 'active-btn';
-        })
+  // }
+  // tabcontent[i].classList.remove('active-tab');
+
+  // Get all elements with class name 'tab-links' and remove the 'active-link' class
+  var tablinks = document.getElementsByClassName("tab-links");
+  for (var i = 0; i < tablinks.length; i++) {
+    //  tablink[i].classList.remove('active-link');
+    tablinks[i].className = tablinks[i].className.replace(" active-link", "");
+  }
+  //tablinks[i].classList.remove('active-link');
+  // tablink[i].classList.remove('active-link');
+
+  // Show the selected tab and add 'active-link' class to the clicked tab
+  document.getElementById(tabname).style.display = "block";
+  event.currentTarget.classList.add("active-link");
+  document.getElementById(tabname).classList.add("active-tab");
+  // document.getElementById("defaultOpen").click()
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Add event listener to the submit button using its class
+
+  form1.addEventListener("submit", function (e) {
+    e.preventDefault(); // stop form submission
+    var nameValue = nameInputField.value.trim();
+    var blogValue = blogInputField.value.trim();
+
+    if (nameValue === "" || blogValue === "") {
+      alert("Please fill in field!");
+      nameInputField.focus();
+      blogInputField.focus();
+      e.preventDefault(); // stop form submission
     }
+    const outputText = `Name: ${nameValue}, Blog: ${blogValue}`;
 
-    allSections.addEventListener('click', (e) => {
-        const id = e.target.dataset.id;
+    // Display the combined output as list items
+    const outputList = document.getElementById("output-list");
 
-        if (id) {
-            sectBtns.forEach((btn) => {
-                btn.classList.remove('active')
-            })
-            e.target.classList.add('active')
+    if (nameValue || blogValue) {
+      const listItem = document.createElement("li");
+      listItem.className = "output-item";
+      listItem.textContent = outputText;
 
+      const deleteButton = document.createElement("button");
 
-            //hide other sections
-            sections.forEach((section)=>{
-                section.classList.remove('active')
-            })
+      //   outputList.appendChild(listItem);
+      //  outputList.appendChild(deleteButton);
+      //listItem.appendChild(deleteButton);
 
-            const element =document.getElementById(id);
-            element.classList.add('active');
-          
+      // outputList.style.display = 'block'; // Show the output list
 
+      deleteButton.style.backgroundColor = "red"; // Show the output list
+      deleteButton.textContent = "Delete"; // Show the delete name
+
+      deleteButton.addEventListener("click", function () {
+        outputList.removeChild(listItem);
+        if (outputList.children.length === 0) {
+          outputList.style.display = "none";
         }
-    })
+      });
 
+      listItem.appendChild(deleteButton);
+      outputList.appendChild(listItem);
+      outputList.style.display = "block";
+    } else {
+      // Clear  the output list
 
-}
- 
-//function opentab () {
-     //Remove 'active' class from all tab links and tab contents
-    //for (tablink of tablinks) {
-     //       tablink.classList.remove('active-link');
-   // }
-
-     //for (tabcontent of tabcontents) {
-     //  tabcontent.classList.remove('active-tab');
-   // }
-
-   // tablinks.forEach((link) => {
-   //link.classList.remove("active-link")
-    //});
-    
-
-   // tabcontents.forEach((content) => {
-    // content.classList.remove("active-tab")
-   // });
-
-    // Add 'active' class to the clicked tab link
-   // this.classList.add("active-link");
-
-    // Get the corresponding tab content ID
-    //var tabId = this.getAttribute("data-tab");
-
-    // Add 'active' class to the corresponding tab content
-    //document.getElementById(tabId).classList.add("active-tab");
-//}
-
-// Attach click event listeners to tab links
-//tablinks.forEach(function(link) {
-   // link.addEventListener("click", handleTabClick);
-//});
-
-
-
-// Function to open the tab based on the tab ID
- 
-  function opentab(event,tabname) {
-    // Prevent default behavior of the event (e.g., following a link)
-   // event.preventDefault();
-
-
-
-  
-
-// Get all elements with class name 'tab-contents' and hide them
-    var tabcontents = document.getElementsByClassName('tab-contents');
-    for (var i = 0; i < tabcontents.length; i++) {
-      //tabcontents[i].className = tabcontent[i].className.replace(" active", "");
-    
-        // tablinks[i].classList.remove('active-tab');
-         //tabcontent[i].classList.remove('active-tab');
-        tabcontents[i].style.display = 'none';
+      outputList.innerHTML = "";
+      outputList.style.display = "none"; // Hide the output list
     }
-        
-   // }
-   // tabcontent[i].classList.remove('active-tab');
 
-// Get all elements with class name 'tab-links' and remove the 'active-link' class
-    var tablinks = document.getElementsByClassName('tab-links');
-    for (var i = 0; i < tablinks.length; i++) {
-      //  tablink[i].classList.remove('active-link');
-        tablinks[i].className = tablinks[i].className.replace(" active-link", "");
-    }
-    //tablinks[i].classList.remove('active-link');
-   // tablink[i].classList.remove('active-link');
-        
+    form1.reset();
+  });
+});
 
-    // Show the selected tab and add 'active-link' class to the clicked tab
-   document.getElementById(tabname).style.display = 'block';
-    event.currentTarget.classList.add('active-link');
-    document.getElementById(tabname).classList.add('active-tab')
-   // document.getElementById("defaultOpen").click()
-}
-
-
-
-
-
-
- PageTransitions();
-
-
-
+PageTransitions();
