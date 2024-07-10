@@ -98,4 +98,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+  function PageTransitions() {
+    // Add click event listeners to section buttons
+    sectBtn.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        // Remove active class from all buttons
+        sectBtn.forEach((b) => b.classList.remove("active-btn"));
+        // Add active class to the clicked button
+        this.classList.add("active-btn");
+
+        // Get the id of the section to display
+        const id = this.dataset.id;
+        sections.forEach((section) => {
+          section.classList.remove("active");
+        });
+        document.getElementById(id).classList.add("active");
+      });
+    });
+  }
+
+
 PageTransitions();
