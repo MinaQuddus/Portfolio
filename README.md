@@ -1,4 +1,4 @@
-# mina-quddus
+# Mina-quddus
 Welcome to my portfolio! I am a Quality Assurance (QA) Tester with a passion for ensuring software quality. Here’s a brief overview of my skills, projects, and how to reach me.
 ## About Me
 
